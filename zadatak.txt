@@ -1,0 +1,19 @@
+ZADATAK:
+	Korišćenjem HTML i Sass tehnologija realizovati HTML stranicu prikazanu na slikama.
+	Implementirati sledeće zahteve:
+	1.	Sass kod modularizovati minimalno tako da se korišćene promenljive i mixini pišu u posebnim
+		  sass datotekama koje se uključuju u glavni fajl.
+	2.	Boje, fontove kao i ostale korisne vrednosti (po sopstvenoj proceni) izdvojiti u sass promenljive.
+	3.	Realizovati responsive verzije stranice za veliki i mali ekran.
+  	4.  Koristiti git za verzionisanje tokom izrade zadatka. u lokalnom git repozitorijumu kreirati
+      .gitignore datoteku koja odgovara ovom tipu projekta.
+	5. Implementirati hover efekte kao na slikama
+
+BOJE:
+	Hover teksta :  #9692af;
+	Tamna siva : #7F7F7F;
+	Svetla siva : #eee;
+
+WEB FONTOVI:
+	Open Sans Condensed (normal) - Tekst
+	Staatliches (normal) - Naslovi

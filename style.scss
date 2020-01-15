@@ -1,0 +1,320 @@
+@import 'vars';
+@import 'mixins';
+@import 'functions';
+
+
+@include start;
+
+header{
+    width: 100%;
+    height: 6em;
+    background-color: color(darkGray);
+    @include flex(row,center,flex-start);
+    .logo-container{
+        @include flex(row,center,center);
+        width: 200px;;
+        p{
+            font-size: 2em;
+            font-weight: bold;
+        }
+        img{
+            margin-right: 0.5em;;
+        }
+    }
+    nav{
+        width: 600px;
+        height: 100%;
+        @include flex(row,center,flex-start);
+        ul{
+            @include flex(row,center,flex-start);
+            list-style: none;
+            height: 100%;
+            width: 100%;
+            li{
+                height: 100%;
+                margin-left:1em;
+                a{
+                    @include flex(row,center,center);
+                    height: 100%;
+                    text-decoration: none;
+                    color:color(dark);
+                    font-family: $headlineFont;
+                    font-size: 1.8em;
+                    &:hover{
+                        color:color(textHover);
+                    }
+
+                }
+            }
+            
+        }
+    }
+}
+
+.main{
+    height: calc(100vh - 6em);
+    background-image: url(slike/cars.jpg);
+    background-position: center;
+    background-size: cover;
+    @include flex(row,flex-end,center);
+    .row{
+        background-color: color(transparent);
+        width: 100%;
+        padding: 1.5em;
+        color:color(lightGray);
+        h1{
+            font-size: 6em;
+        }
+        p{
+            font-size: 2em;
+        }
+    }
+}
+#about{
+    height: auto;
+    padding: 2em 0;
+    background-color: color(lightGray);
+    @include flex(column,center,center);
+    .row{
+        width: 80%;
+        @include flex(row,center,center);
+        .col{
+            margin:0 1em;
+            p{
+                text-align: justify;
+                text-indent: 1em;
+                
+            }
+            .clear{
+                text-indent: 0;
+            }
+        }
+    }
+    h2{
+        padding-bottom: 1em;
+    }
+}
+#our-offer{
+    height: auto;
+    padding: 2em 0;
+    @include flex(column,center,center);
+    h2{
+        padding-bottom: 1em;
+    }
+    .row{
+        width: 70%;
+        margin-bottom: 2em;
+         @include flex(row,center,center);
+         .text{
+             margin-right:1.5em;
+             text-align: justify;
+             text-indent: 1em;
+         }
+         .image{
+             img{
+                 width: 150px;
+                 background-color: color(lightGray);
+                 padding:1em;
+                 border-radius: 15px;;
+             }
+         }
+    }
+}
+
+.our-staff{
+    height:auto;
+    padding:2em 0;
+    background-color:rgb(255, 255, 255);
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    
+    .row{
+        display:flex;
+        width: 80%;
+        margin-top:1em;
+        justify-content: center;
+        height: auto;
+        flex-wrap: wrap;
+        .col{
+            text-align: center;
+            width: 200px;
+            margin: 1em;;
+            img{
+                width:100%;
+                background-color: rgb(216, 216, 216);
+                border-radius: 15px;
+            }
+            
+        }
+    }
+}
+
+#contact-us{
+    height: auto;
+    padding:2em 0;
+    background-color: color(lightGray);
+    @include flex(column,center,center);
+    h2{
+        padding-bottom: 1em;
+    }
+    .row{
+        width: 80%;
+        @include flex(row,flex-end,space-between);
+        form{
+            padding:0.7em 2em;
+            width: 55%;
+            margin-right: 1em;
+            background-color: color(darkGray);
+            @include flex(row,flex-start,flex-start);
+            flex-wrap:wrap;
+            input,textarea,input[type=submit]{
+                padding:1em;
+                margin:0.2em;
+                font-family: $textFont;
+            }
+           .half{
+               flex:1;
+           }
+            #subject{
+                flex:100%;
+            }
+            textarea{
+                width: 100%;
+                margin:2em 0;
+            }
+           input[type=submit]{
+               width: 100%;
+           }
+
+        }
+        .map{
+            width: 40%;
+            overflow: hidden;
+            border:1px solid color(darkGray);
+        }
+    }
+}
+
+@include tablet{
+    .main{
+        height: auto;
+    }
+    #about{
+        .row{
+            width: 70%;
+            @include flex(column,center,center);
+            
+        }
+        
+    }
+    #our-offer{
+        .row{
+            width: 50%;
+            @include flex(column,center,center);
+            .text{
+                margin:0;
+            }
+            .image{
+                margin-top: 2em;
+
+            }
+        }
+    }
+    .our-staff{
+        .row{
+            width: 70%;
+        }
+    }
+    #contact-us{
+        .row{
+            width: 70%;
+            @include flex(column,center,center);
+            .map{
+                width: 100%;
+                order:1;
+            }
+            form{
+                width: 100%;
+                order:2;
+                margin:2em 0 0 0;
+                padding:1em 1em 0 1em;
+                .half{
+                    flex:100%;
+                }
+                #subject{
+                    margin-top:1em;
+                }
+            }
+        }
+    }
+}
+@include phone{
+    header{
+        height: auto;
+        @include flex(column,center,flex-start);
+        .logo-container{
+            width: 100%;
+            padding:1em 0;
+        }
+        nav{
+            @include flex(column,center,center);
+            width: 100%;
+            ul{
+                @include flex(column,center,center);
+                width: 100%;
+                li{ 
+                    width: 100%;
+                    border-top: 1px solid rgba(0, 0, 0, 0.199);
+                    margin:0;
+                    a{
+                        padding:1em 0;
+                        
+                    }
+                }
+            }
+        }
+    }
+    .main{
+        .row{
+            padding-top:4em;
+            h1{
+                font-size: 2em;
+                text-align: center;
+            }
+            p{
+                display: none;
+            }
+        }
+    }
+    #about{
+        .row{
+            width: 90%;
+            @include flex(column,center,center);
+        }
+    }
+    #our-offer{
+        .row{
+            width: 70%;
+            .image{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+    .our-staff{
+        .row{
+            width: 70%;
+            .col{
+                width: 100%;
+                p{
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+}
