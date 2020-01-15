@@ -198,6 +198,15 @@ header {
     }
   }
 }
+//Footer styles
+footer {
+  background-color: color(darkGray);
+  padding: 1em;
+  p {
+    text-align: center;
+    font-weight: bold;
+  }
+}
 // Media queries tablet view
 @include tablet {
   .main {
